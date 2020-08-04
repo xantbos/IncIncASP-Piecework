@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="IncInc.Master.cs" Inherits="IncIncASP.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>IncInc. - <%: Page.Title %></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frmIncInc" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <span class="navbar-brand" href="#">
+              <span><a href="/Home.aspx" ><img src="/Content/IncIncLogo.png" height="50"/></a></span>
+              Incorporeal Incorporated
+          </span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/Home.aspx">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/About.aspx">About</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <asp:LoginStatus CssClass="nav-link" ID="loginstatusBase" runat="server" OnLoggingOut="SignOut" LogoutAction="Refresh"/>
+                </li>  
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+          </div>
+        </nav>
+        <div class="container body-content">
+            <br />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer class="fixed-bottom">
+        <div class="container-fluid bg-light text-center">
+            <span class="text-muted">IncIncASP Payroll Application - Lab 4 - Adrian Kriz</span>
+        </div>
+    </footer>
+</body>
+</html>
